@@ -1,14 +1,16 @@
 {
   "name": "@sekiju/utilities",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common Node.js utilities library",
   "source": "src/index.ts",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist/",
     "build": "tsc",
     "lint": "eslint src/ --ext .ts,.js --ignore-path .gitignore --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^18.7.3",

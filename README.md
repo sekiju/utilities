@@ -5,11 +5,18 @@
   - [`isFunction`](#isfunction)
   - [`isUrl`](#isurl)
   - [`isNumber`](#isnumber)
+  - [`isObject`](#isobject)
   - [`isNullOrUndefined`](#isnullorundefined)
+  - [`isNullOrUndefinedOrEmpty`](#isnullorundefinedorempty)
+  - [`isNullOrUndefinedOrZero`](#isnullorundefinedorzero)
   - [`fetchFiles`](#fetchfiles)
   - [`clamp`](#clamp)
   - [`pickRandom`](#pickrandom)
+  - [`chunk`](#chunk)
+  - [`flatten`](#flatten)
   - [`generateString`](#generatestring)
+  - [`cleanObject`](#cleanobject)
+  - [`sleep`](#sleep)
 
 ## Description
 
@@ -58,6 +65,16 @@ isNumber(10) // true
 isNumber('10') // false
 ```
 
+### `isObject`
+
+Verify if the input is an object literal (or class).
+
+```js
+isObject({}) // true
+isObject([]) // true
+isObject('foo') // false
+```
+
 ### `isNullOrUndefined`
 
 Checks whether a value is `null` or `undefined`.
@@ -66,6 +83,24 @@ Checks whether a value is `null` or `undefined`.
 isNullOrUndefined(null) // true
 isNullOrUndefined(undefined) // true
 isNullOrUndefined(1) // false
+```
+
+### `isNullOrUndefinedOrEmpty`
+
+Checks whether or not a value is `null`, `undefined` or `''`, `[]`
+
+```js
+isNullOrUndefinedOrEmpty('') // true
+isNullishOrEmpty('') // true
+```
+
+### `isNullOrUndefinedOrZero`
+
+Checks whether or not a value is `null`, `undefined` or `0`
+
+```js
+isNullOrUndefinedOrZero(0) // true
+isNullishOrZero(0) // true
 ```
 
 ### `fetchFiles`
@@ -84,7 +119,7 @@ Fetches file paths from a directory
 ```js
 /**
  * @param dir Directory with files
- * @param ignoreSubdirectories Include subdirectories
+ * @param includeSubdirectories Include subdirectories
  */
 
 fetchFiles('/root/images') // ['/root/images/01.png']
@@ -110,12 +145,42 @@ pickRandom([0, 1, 2, 3, 4, 5]) // 3
 pickRandom([0, 1, 2, 3, 4, 5], 2) // [3, 0]
 ```
 
+### `chunk`
+
+Splits an array into smaller arrays of a specified size
+
+```js
+chunk([1000, 7, 993, 7], 2) // [[1000, 7], [993, 7]]
+```
+
+### `flatten`
+
+Flattens a nested array (i.e., an array of arrays) into a single-level array
+
+```js
+flatten([[1, 2, 3], [9, 9, 3]]) // [1, 2, 3, 9, 9, 3]
+```
+
 ### `generateString`
 
 Generates string from latin chars with numbers
 
 ```js
 generateString(8) // BbLzLcN3
+```
+
+### `cleanObject`
+
+Clean undefined and null values from object
+
+```js
+cleanObject({ foo: 'bar', nullish: null }) // { foo: 'bar' }
+```
+
+### `sleep`
+
+```js
+await sleep(1000) // Sleep 1 second
 ```
 
 ---
