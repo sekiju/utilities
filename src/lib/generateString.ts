@@ -7,3 +7,5 @@ const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 export const generateString = (length: number): string => {
 	return Array(length).join().split(',').map(() => chars.charAt(Math.floor(Math.random() * chars.length))).join('')
 }
+
+export { generateString as randomString }

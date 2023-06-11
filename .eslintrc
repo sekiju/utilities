@@ -76,7 +76,6 @@
     "@typescript-eslint/no-duplicate-imports": [ "error", { "includeExports": false } ],
 
     "camelcase": ["off"],
-    "comma-dangle": ["error", "always-multiline"],
     "semi": ["error", "never"],
     "indent": ["warn", "tab"],
     "space-before-blocks": "warn",

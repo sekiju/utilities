@@ -9,7 +9,7 @@
   - [`isNullOrUndefined`](#isnullorundefined)
   - [`isNullOrUndefinedOrEmpty`](#isnullorundefinedorempty)
   - [`isNullOrUndefinedOrZero`](#isnullorundefinedorzero)
-  - [`fetchFiles`](#fetchfiles)
+  - [`fetchFiles`](#fetchfiles-commonjs)
   - [`clamp`](#clamp)
   - [`pickRandom`](#pickrandom)
   - [`chunk`](#chunk)
@@ -103,7 +103,7 @@ isNullOrUndefinedOrZero(0) // true
 isNullishOrZero(0) // true
 ```
 
-### `fetchFiles`
+### `fetchFiles [CommonJS]`
 
 Fetches file paths from a directory
 

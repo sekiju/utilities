@@ -1,9 +1,11 @@
 {
   "name": "@sekiju/utilities",
-  "version": "1.0.1",
+  "version": "1.0.3",
+  "type": "module",
   "description": "Common Node.js utilities library",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
+  "source": "src/common.ts",
+  "main": "dist/common.js",
+  "browser": "dist/global.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist/",
